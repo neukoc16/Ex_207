@@ -29,20 +29,28 @@ public class Weatherstation {
         return humidity;
     }
 
-    public void setHumidity(int humidity) {
-        this.humidity = humidity;
+    public void setHumidity(int humidity) throws Exception {
+        if (humidity > 0 && humidity <= 100) {
+            this.humidity = humidity;
+        } else {
+            throw new Exception("Humidity out of bounds!");
+        }
     }
 
     public void setSealevel(int sealevel) {
         this.sealevel = sealevel;
     }
 
-    public void setPlace(String place) {
+    public void setPlace(String place) throws Exception {
         this.place = place;
     }
 
-    public void setTemperature(double temperature) {
-        this.temperature = temperature;
+    public void setTemperature(double temperature) throws Exception {
+        if (humidity > 0 && humidity <= 100) {
+            this.temperature = temperature;
+        } else {
+            throw new Exception("Temperature out of bounds!");
+        }
     }
 
 }

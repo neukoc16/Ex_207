@@ -5,7 +5,7 @@ import javax.swing.table.AbstractTableModel;
 public class WeatherModel extends AbstractTableModel {
 
     private ArrayList<Weatherstation> stations = new ArrayList<>();
-    private String[] coNames = {"Place", "Sea Level", "Temperature", "rel. Humidity"};
+    private String[] colNames = {"Place", "Sea Level", "Temperature", "rel. Humidity"};
 
     @Override
     public int getRowCount() {
@@ -20,6 +20,11 @@ public class WeatherModel extends AbstractTableModel {
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
 
+    }
+
+    @Override
+    public String getColumnName(int i) {
+        return colNames[i];
     }
 
 }

@@ -13,14 +13,8 @@ public class WeatherModel extends AbstractTableModel {
     }
 
     public void add(Weatherstation w) {
-        int i;
-        for (i = 0; i < stations.size(); i++) {
-            if (stations.get(i).getPlace() > w.getPlace()) {
-                break;
-            }
-        }
-        stations.add(i, w);
-        fireTableRowsInserted(i, i);
+        stations.add(w);
+        fireTableRowsInserted(0, 0);
     }
 
     @Override
@@ -38,4 +32,7 @@ public class WeatherModel extends AbstractTableModel {
         return colNames[i];
     }
 
+    public void hideSea() {
+
+    }
 }

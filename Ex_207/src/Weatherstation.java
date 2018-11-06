@@ -46,7 +46,7 @@ public class Weatherstation {
     }
 
     public void setTemperature(double temperature) throws Exception {
-        if (humidity > 0 && humidity <= 100) {
+        if (temperature >= -35 && temperature <= 45) {
             this.temperature = temperature;
         } else {
             throw new Exception("Temperature out of bounds!");

@@ -11,6 +11,8 @@ public class GUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        pmmenu = new javax.swing.JPopupMenu();
+        mihide = new javax.swing.JMenuItem();
         jScrollPane1 = new javax.swing.JScrollPane();
         tbWeather = new javax.swing.JTable();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -20,6 +22,9 @@ public class GUI extends javax.swing.JFrame {
         menval = new javax.swing.JMenu();
         mitemp = new javax.swing.JMenuItem();
         mihum = new javax.swing.JMenuItem();
+
+        mihide.setText("Hide Sea-Level");
+        pmmenu.add(mihide);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -34,6 +39,7 @@ public class GUI extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tbWeather.setComponentPopupMenu(pmmenu);
         jScrollPane1.setViewportView(tbWeather);
 
         menstat.setText("Stations");
@@ -133,9 +139,11 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JMenu menstat;
     private javax.swing.JMenu menval;
     private javax.swing.JMenuItem miadd;
+    private javax.swing.JMenuItem mihide;
     private javax.swing.JMenuItem mihum;
     private javax.swing.JMenuItem mirem;
     private javax.swing.JMenuItem mitemp;
+    private javax.swing.JPopupMenu pmmenu;
     private javax.swing.JTable tbWeather;
     // End of variables declaration//GEN-END:variables
 }

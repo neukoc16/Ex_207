@@ -1,9 +1,21 @@
 
 public class WeatherDia extends javax.swing.JDialog {
 
+    private boolean ok;
+    private Weatherstation ws;
+
     public WeatherDia(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+
+    }
+
+    public boolean isOK() {
+        return ok;
+    }
+
+    public Weatherstation getWS() {
+        return ws;
     }
 
     @SuppressWarnings("unchecked")
@@ -104,11 +116,15 @@ public class WeatherDia extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btokActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btokActionPerformed
-        // TODO add your handling code here:
+        ws = new Weatherstation(tfplace.getText(), Integer.parseInt(tfsea.getText()),
+                Double.parseDouble(tftemp.getText()), Integer.parseInt(tfhum.getText()));
+        ok = true;
+        this.dispose();
     }//GEN-LAST:event_btokActionPerformed
 
     private void btcancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btcancelActionPerformed
-        // TODO add your handling code here:
+        ok = false;
+        this.dispose();
     }//GEN-LAST:event_btcancelActionPerformed
     public static void main(String args[]) {
         try {

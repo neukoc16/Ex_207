@@ -1,6 +1,8 @@
 
 public class GUI extends javax.swing.JFrame {
 
+    WeatherModel bl = new WeatherModel();
+
     public GUI() {
         initComponents();
     }
@@ -10,7 +12,7 @@ public class GUI extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tbWeather = new javax.swing.JTable();
         jMenuBar1 = new javax.swing.JMenuBar();
         menstat = new javax.swing.JMenu();
         miadd = new javax.swing.JMenuItem();
@@ -21,7 +23,7 @@ public class GUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tbWeather.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -32,7 +34,7 @@ public class GUI extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tbWeather);
 
         menstat.setText("Stations");
 
@@ -95,7 +97,7 @@ public class GUI extends javax.swing.JFrame {
         dialog.setVisible(true);
         if (dialog.isOK()) {
             Weatherstation t = dialog.getWS();
-            bl.addElement(t.toString());
+            bl.add(t.toString());
         }
     }//GEN-LAST:event_miaddActionPerformed
 
@@ -128,12 +130,12 @@ public class GUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JMenu menstat;
     private javax.swing.JMenu menval;
     private javax.swing.JMenuItem miadd;
     private javax.swing.JMenuItem mihum;
     private javax.swing.JMenuItem mirem;
     private javax.swing.JMenuItem mitemp;
+    private javax.swing.JTable tbWeather;
     // End of variables declaration//GEN-END:variables
 }

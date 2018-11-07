@@ -5,6 +5,8 @@ public class GUI extends javax.swing.JFrame {
 
     public GUI() {
         initComponents();
+        tbWeather.setModel(bl);
+        tbWeather.setDefaultRenderer(Object.class, new MyTableCellRenderer());
     }
 
     @SuppressWarnings("unchecked")
@@ -103,7 +105,7 @@ public class GUI extends javax.swing.JFrame {
         dialog.setVisible(true);
         if (dialog.isOK()) {
             Weatherstation t = dialog.getWS();
-            bl.add(t.toString());
+            bl.add(t);
         }
     }//GEN-LAST:event_miaddActionPerformed
 

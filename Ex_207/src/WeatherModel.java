@@ -6,6 +6,7 @@ public class WeatherModel extends AbstractTableModel {
 
     private final ArrayList<Weatherstation> stations = new ArrayList<>();
     private final String[] colNames = {"Place", "Sea Level", "Temperature", "rel. Humidity"};
+    private int last = 0;
 
     @Override
     public int getRowCount() {
@@ -14,12 +15,13 @@ public class WeatherModel extends AbstractTableModel {
 
     public void add(Weatherstation w) {
         stations.add(w);
+        //Collections.sort(stations);
         fireTableRowsInserted(0, 0);
     }
 
     @Override
     public int getColumnCount() {
-        return colNames.length;
+        return colNames.length-last;
     }
 
     @Override
@@ -32,7 +34,7 @@ public class WeatherModel extends AbstractTableModel {
         return colNames[i];
     }
 
-    public void hideSea() {
-
+    public void hide() {
+        last=
     }
 }

@@ -1,5 +1,8 @@
 
-public class Weatherstation {
+import java.io.Serializable;
+
+
+public class Weatherstation implements Serializable{
 
     private String place;
     private int sealevel;
@@ -25,7 +28,7 @@ public class Weatherstation {
         return place;
     }
 
-    public int getHuidity() {
+    public int getHumidity() {
         return humidity;
     }
 

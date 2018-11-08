@@ -5,8 +5,11 @@ import javax.swing.table.AbstractTableModel;
 public class WeatherModel extends AbstractTableModel {
 
     private final ArrayList<Weatherstation> stations = new ArrayList<>();
-    private final String[] colNames = {"Place", "Sea Level", "Temperature", "rel. Humidity"};
-    private int last = 0;
+    private final String[] colAll = {"Place", "Sea Level", "Temperature", "rel. Humidity"};
+    private final String[] colHide = {"Place", "Temperature", "Humidity"};
+    private final String colNames[] = {""};
+
+    private boolean hidden;
 
     @Override
     public int getRowCount() {
@@ -21,7 +24,7 @@ public class WeatherModel extends AbstractTableModel {
 
     @Override
     public int getColumnCount() {
-        return colNames.length-last;
+        return colNames.length;
     }
 
     @Override
@@ -35,6 +38,10 @@ public class WeatherModel extends AbstractTableModel {
     }
 
     public void hide() {
-        last=
+        if (hidden) {
+            hidden = false;
+        } else {
+            hidden = true;
+        }
     }
 }
